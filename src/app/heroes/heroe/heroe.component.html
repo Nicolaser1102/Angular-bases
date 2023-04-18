@@ -1,0 +1,37 @@
+
+<h1>{{nombre}}</h1>
+
+<dl>   <!-- definicion list -->
+    <td>Nombre:</td><!-- table description -->
+    <dd>{{nombre}}</dd><!-- descripcion -->
+
+    <td>Edad:</td><!-- table description -->
+    <dd>{{edad}}</dd><!-- descripcion -->
+
+    <td>Método:</td><!-- table description -->
+    <dd>{{getDescripcionHeroe()}}</dd><!-- descripcion -->
+
+    <td>Capitalizado:</td><!-- table description -->
+    <dd>{{nombreCapitalizado}}</dd><!-- descripcion -->
+</dl>
+
+<!-- ng*if es una directiva que muestra u oculta elementos en el caso de abajo el boton se va a mostrar mientras el nombre sea diferente de Miles Morales; cuando el nombre sea igual, lo va a desaparecer-->
+<button 
+    *ngIf="nombre !=='Miles Morales'" 
+    (click)="cambiarNombreHeroe()" 
+    class="btn btn-primary mx-2">
+    Cambiar nombre
+</button>
+
+<button 
+    *ngIf="edad !==21"
+    (click)="cambiarEdadHeroe()" 
+    class="btn btn-primary">
+    Cambiar edad
+</button>
+
+<button 
+    (click)="resetFormulario()" 
+    class="btn btn-primary">
+    Reset
+</button>
