@@ -5,13 +5,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 
 
-//se importó el módulo de componente
+//se importó los modulos
 import { CounterModule } from './contador/contador.module';
 import { heroesModule } from './heroes/heroes.module';
+import { DbzModule } from './dbz/dbz.module';
 
-
-//se importó el componente para usar en el módulo
+//se importó el componente para usar en el módulo (componente principal)
 import { AppComponent } from './app.component';
+
+
 
 
 
@@ -24,7 +26,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule, 
     CounterModule,
-    heroesModule
+    heroesModule,
+    DbzModule
   ],
   providers: [],
   bootstrap: [AppComponent]
