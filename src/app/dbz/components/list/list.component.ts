@@ -29,6 +29,7 @@ export class ListComponent {
     console.log("Este es el ID: ", id)
 
     this.onDeleteID.emit(id);
+
   }
 
 }

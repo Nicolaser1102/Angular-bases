@@ -1,0 +1,31 @@
+
+<!-- *ngFor : es un ciclo for para el lado del template (plantilla) -->
+
+<h3>Listado de Héroes</h3>
+
+<!-- si la afirmación es true aparecerá los elementos del div, pero sino (else) se mostrará el ng template que
+no ocupa espacio como div  -->
+<div 
+    *ngIf="heroeBorrado; else noSeHaBorradoNada">
+    <h3>Héroe borrado <small class="text-danger">{{heroeBorrado}}</small></h3>
+</div>
+
+<!-- el ng template ocupa un nombre de referencia local -->
+<ng-template #noSeHaBorradoNada>
+<h3>No ha borrado nada</h3>
+</ng-template>
+
+<!-- de nuevo el '*ngIf' , si la condición es verdadera muestra todo lo que tenga el elemento, si es falsa la destruye -->
+<button
+    *ngIf="heroeNombres.length > 0 "
+    (click)="removerUltimoHeroe()"
+    class="btn btn-outline-danger">
+        Borrar último héroe
+</button>
+
+
+<ul class="mt-2 list-group">
+    <li *ngFor="let name of heroeNombres" class="list-group-item">
+        {{name}}
+    </li>
+</ul>
